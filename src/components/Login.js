@@ -25,7 +25,7 @@ export default function Login() {
                 history.push('/myPage');
             })
             .catch(function (error) {
-                window.alert("Error while logging out.");
+                window.alert("Error while logging in.");
             })
     }
 
