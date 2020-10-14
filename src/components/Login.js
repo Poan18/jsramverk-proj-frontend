@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import './Login.css';
 
 const axios = require('axios');
@@ -37,7 +37,7 @@ export default function Login() {
                     <FormLabel>Email address</FormLabel>
                     <FormControl
                         type="email"
-                        placeholder="Ange email"
+                        placeholder="Email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
@@ -54,13 +54,15 @@ export default function Login() {
                 </FormGroup>
 
                 <Button
-                    variant="primary"
+                    variant="success"
                     type="submit"
                     disabled={!validateForm()}
                     block
                 >
                     Submit
                 </Button>
+
+                <a class="btn btn-primary" href="/register" role="button">Register a user</a>
             </form>
         </div>
     )

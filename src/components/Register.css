@@ -1,11 +1,11 @@
-.login {
+.register {
     max-width: 400px;
     text-align: center;
     margin: auto;
     padding: 10px;
 }
 
-.login a {
+.register a {
     margin-top: 10px;
     width: 100%;
 }
