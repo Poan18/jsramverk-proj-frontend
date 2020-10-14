@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
+import './Login.css';
 
 const axios = require('axios');
 
-export default function Register() {
+export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     let history = useHistory();
@@ -15,22 +16,22 @@ export default function Register() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('/register', {
+        axios.post('/login', {
             email: email,
             password: password
             })
             .then(function (response) {
-                window.alert("Use has been created.");
-                history.push('/login');
+                window.localStorage.setItem('User', email);
+                history.push('/myPage');
             })
             .catch(function (error) {
-                window.alert("Error at registration.");
+                window.alert("Error while logging out.");
             })
     }
 
     return (
-        <div className="register">
-            <h2>Register a user</h2>
+        <div className="login">
+            <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <FormGroup controlId="email">
                     <FormLabel>Email address</FormLabel>
@@ -58,7 +59,7 @@ export default function Register() {
                     disabled={!validateForm()}
                     block
                 >
-                    Register
+                    Submit
                 </Button>
             </form>
         </div>
