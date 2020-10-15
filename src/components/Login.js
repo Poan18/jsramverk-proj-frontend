@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './Login.css';
 
 const axios = require('axios');
@@ -59,7 +59,7 @@ export default function Login() {
                     disabled={!validateForm()}
                     block
                 >
-                    Submit
+                    Login
                 </Button>
 
                 <a class="btn btn-primary" href="/register" role="button">Register a user</a>
