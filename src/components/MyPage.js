@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import Balance from './Balance';
+import Objects from './Objects';
+import Inventory from './Inventory';
 
 const axios = require('axios');
 
@@ -47,6 +49,8 @@ class MyPage extends React.Component {
                 <div onClick={this.logOut.bind(this)}>Logout </div>
                 <h1>You're logged in!</h1>
                 <Balance />
+                <Inventory />
+                <Objects />
             </div>
         );
     }

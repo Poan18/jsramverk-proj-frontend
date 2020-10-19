@@ -5,6 +5,8 @@ import Navigation from './components/Navigation';
 import Register from './components/Register';
 import Login from './components/Login';
 import MyPage from './components/MyPage';
+import BuyObject from './components/BuyObject';
+import SellObject from './components/SellObject';
 import Home from './components/Home';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
                 <Switch>
                     <Route path="/register" component={Register} />
                     <Route path="/login" component={Login} />
+                    <Route path="/objects/buy/:name" component={BuyObject} />
+                    <Route path="/objects/sell/:name" component={SellObject} />
                     <PrivateRoute path="/myPage" component={Login} />
                     <Route path="/" component={Home} />
                 </Switch>
