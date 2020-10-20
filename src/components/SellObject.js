@@ -40,16 +40,17 @@ class SellObject extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        axios.post(`/objects/${this.state.object.Name}`, {
+        let name = this.props.match.params.name;
+        axios.post(`/objects/sell/${name}`, {
             amount: this.state.amount,
             email: this.state.email
             })
             .then(function (response) {
-                console.log("SEND INFO, N GOT BACK");
-                console.log(response);
+                window.alert(response.data.data.msg);
+                console.log(response.data.data.msg);
             })
             .catch(function (error) {
-                window.alert("Error while logging.");
+                window.alert("Error while selling object.");
             })
     }
 
@@ -82,7 +83,7 @@ class SellObject extends React.Component {
                         type="submit"
                         block
                     >
-                        Buy
+                        Sell
                     </Button>
                 </form>
             </div>

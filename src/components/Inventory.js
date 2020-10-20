@@ -23,7 +23,6 @@ class Inventory extends React.Component {
         let email = this.state.email
         axios.get(`/userInfo/inventory/${email}`)
             .then((response) => {
-                console.log(response.data);
                 this.setState({ objects: response.data });
             })
             .catch((error) => {

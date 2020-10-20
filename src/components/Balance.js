@@ -48,8 +48,7 @@ class Balance extends React.Component {
                 window.alert("Error while adding balance.");
                 console.log(error);
             })
-        this.getData();
-        this.props.history.push("/myPage");
+        this.setState({ balance: parseInt(this.state.balance) + parseInt(this.state.addBalance) });
     }
 
     render() {

@@ -46,12 +46,11 @@ class BuyObject extends React.Component {
             email: this.state.email
             })
             .then(function (response) {
-                console.log(response.data);
+                window.alert(response.data.data.msg);
             })
             .catch(function (error) {
                 window.alert("Error while buying object.");
             })
-        this.props.history.push("/myPage");
     }
 
     render() {
