@@ -62,7 +62,7 @@ export default function Login() {
                     Login
                 </Button>
 
-                <a class="btn btn-primary" href="/register" role="button">Register a user</a>
+                <a className="btn btn-primary" href="/register" role="button">Register a user</a>
             </form>
         </div>
     )

@@ -61,7 +61,7 @@ export default function Register() {
                 >
                     Register
                 </Button>
-                <a class="btn btn-primary" href="/login" role="button">Login as a user</a>
+                <a className="btn btn-primary" href="/login" role="button">Login as a user</a>
             </form>
         </div>
     )

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Table } from 'react-bootstrap';
 import './Objects.css';
+import { registerOnMessageCallback, send, startWebsocketConnection, closeWs } from './websocket';
 
 const axios = require('axios');
 
@@ -12,10 +13,17 @@ class Objects extends React.Component {
         this.state = {
             objects: []
         };
+        registerOnMessageCallback(this.onPriceUpdate.bind(this));
     }
 
     componentDidMount() {
+        startWebsocketConnection();
+        setInterval(function(){ send("Update"); }, 10000);
         this.getData();
+    }
+
+    componentWillUnmount() {
+        closeWs();
     }
 
     getData() {
@@ -28,6 +36,11 @@ class Objects extends React.Component {
             })
     }
 
+    onPriceUpdate (objects) {
+
+        this.setState({ objects: JSON.parse(objects) });
+    }
+
     renderObjects() {
 
         var animals = this.state.objects.map(animal =>
@@ -36,7 +49,6 @@ class Objects extends React.Component {
                 <td>{animal.Price}</td>
                 <td>
                     <a href={`objects/buy/${animal.Name}`}>Buy </a>
-                    <a href={`objects/sell/${animal.Name}`}>Sell</a>
                 </td>
             </tr>
         );

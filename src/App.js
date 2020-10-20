@@ -17,9 +17,9 @@ function App() {
                 <Switch>
                     <Route path="/register" component={Register} />
                     <Route path="/login" component={Login} />
-                    <Route path="/objects/buy/:name" component={BuyObject} />
-                    <Route path="/objects/sell/:name" component={SellObject} />
-                    <PrivateRoute path="/myPage" component={Login} />
+                    <PrivateRoute path="/objects/buy/:name" component={BuyObject} />
+                    <PrivateRoute path="/objects/sell/:name" component={SellObject} />
+                    <PrivateRoute path="/myPage" component={MyPage} />
                     <Route path="/" component={Home} />
                 </Switch>
             </div>
@@ -27,10 +27,22 @@ function App() {
     );
 }
 
+// const PrivateRoute = ({component: Component, ...rest}) => (
+//     <Route {...rest} render={(props) => (
+//         localStorage.getItem('User') ? <MyPage /> : <Redirect to='/login' />
+//     )} />
+// )
+
 const PrivateRoute = ({component: Component, ...rest}) => (
-    <Route {...rest} render={(props) => (
-        localStorage.getItem('User') ? <MyPage /> : <Redirect to='/login' />
-    )} />
+    <Route
+        {...rest}
+        render={props =>
+            localStorage.getItem('User') ? (
+                <Component {...props} />
+            ) : (
+                <Redirect to='/login'/>
+            )
+    } />
 )
 
 export default App;
