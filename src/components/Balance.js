@@ -38,17 +38,21 @@ class Balance extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        axios.post(`/addBalance/${this.state.email}`, {
-            addBalance: this.state.addBalance
-            })
-            .then(function (response) {
-                console.log("Added balance.");
-            })
-            .catch(function (error) {
-                window.alert("Error while adding balance.");
-                console.log(error);
-            })
-        this.setState({ balance: parseInt(this.state.balance) + parseInt(this.state.addBalance) });
+        if (Number.isInteger(parseInt(this.state.addBalance))) {
+            axios.post(`/addBalance/${this.state.email}`, {
+                addBalance: this.state.addBalance
+                })
+                .then(function (response) {
+                    console.log("Added balance.");
+                })
+                .catch(function (error) {
+                    window.alert("Error while adding balance.");
+                    console.log(error);
+                })
+            this.setState({ balance: parseInt(this.state.balance) + parseInt(this.state.addBalance) });
+        } else {
+            window.alert("Balance must be a integer number.");
+        }
     }
 
     render() {

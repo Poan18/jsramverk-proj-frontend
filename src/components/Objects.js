@@ -46,7 +46,7 @@ class Objects extends React.Component {
         var animals = this.state.objects.map(animal =>
             <tr key={animal.Name}>
                 <td>{animal.Name}</td>
-                <td>{animal.Price}</td>
+                <td>{animal.Price}$</td>
                 <td>
                     <a href={`objects/buy/${animal.Name}`}>Buy </a>
                 </td>
@@ -58,7 +58,7 @@ class Objects extends React.Component {
     render() {
         return (
             <div className="objects">
-                <h3>Animals available</h3>
+                <h3>Objects available</h3>
                 <Table striped bordered hover size="sm">
                     <thead>
                         <tr>

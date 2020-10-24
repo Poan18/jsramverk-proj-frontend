@@ -27,12 +27,6 @@ function App() {
     );
 }
 
-// const PrivateRoute = ({component: Component, ...rest}) => (
-//     <Route {...rest} render={(props) => (
-//         localStorage.getItem('User') ? <MyPage /> : <Redirect to='/login' />
-//     )} />
-// )
-
 const PrivateRoute = ({component: Component, ...rest}) => (
     <Route
         {...rest}
