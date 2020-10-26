@@ -1,10 +1,8 @@
 import { withRouter } from "react-router-dom";
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-
-const axios = require('axios');
 
 class ObjectsGraph extends React.Component {
     constructor(props) {
