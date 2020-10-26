@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Button, FormGroup, FormLabel, FormControl } from 'react-bootstrap';
-import ShowBalance from './ShowBalance';
 import './SellObject.css';
 
 const axios = require('axios');
@@ -61,7 +60,7 @@ class SellObject extends React.Component {
                 <div className="returnBtn">
                     <a className="btn btn-primary" href="/myPage" role="button">Go back</a>
                 </div>
-                <ShowBalance />
+
                 <form onSubmit={this.handleSubmit}>
                     <h2>{this.state.object.Name}</h2>
                     <FormGroup>

@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { Table } from 'react-bootstrap';
 import './Objects.css';
 import { registerOnMessageCallback, send, startWebsocketConnection, closeWs } from './websocket';
+import ObjectsGraph from './ObjectsGraph';
 
 const axios = require('axios');
 
@@ -71,6 +72,7 @@ class Objects extends React.Component {
                         { this.renderObjects() }
                     </tbody>
                 </Table>
+                <ObjectsGraph objects={this.state.objects} />
             </div>
         );
     }

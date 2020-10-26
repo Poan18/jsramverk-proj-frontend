@@ -21,7 +21,7 @@ export default function Register() {
             password: password
             })
             .then(function (response) {
-                window.alert("Use has been created.");
+                window.alert("User has been created.");
                 history.push('/login');
             })
             .catch(function (error) {

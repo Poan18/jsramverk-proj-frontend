@@ -1,5 +1,5 @@
 // Use Use url in production, otherwise use local
-const host = process.env.NODE_ENV === 'production' ? 'me-api.ponand.me' : 'localhost:1338';
+const host = process.env.NODE_ENV === 'production' ? 'proj-api.ponand.me' : 'localhost:1338';
 
 // Send is used to send messages
 export let send;
