@@ -1,3 +1,11 @@
+Different packages used:
+axios (https://www.npmjs.com/package/axios) - Used to easily create HTTP requests towards the server.
+
+bootstrap and react-bootstrap (https://www.npmjs.com/package/bootstrap, https://www.npmjs.com/package/react-bootstrap) - Used to easily create HTML elements with predefined style and useful functionality.
+
+recharts (https://www.npmjs.com/package/recharts) - Chart library used to display object prices in a beautiful bar-chart.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
