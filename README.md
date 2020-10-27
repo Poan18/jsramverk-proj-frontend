@@ -5,6 +5,8 @@ bootstrap and react-bootstrap (https://www.npmjs.com/package/bootstrap, https://
 
 recharts (https://www.npmjs.com/package/recharts) - Chart library used to display object prices in a beautiful bar-chart.
 
+The WebSocket was created with WebApi WebSocket (https://developer.mozilla.org/en-US/docs/Web/API/WebSocket). It's started when the client renders the MyPage site and closes when user leaves it. Since there are not many users using this website I decided to make send a websocket message every 10 seconds to check if there are any updates on the prices. On the server side the prices are automaticly updated every 10 seconds to simulate a real-world application.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
